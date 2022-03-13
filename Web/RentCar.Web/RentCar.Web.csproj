@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-RentCar-BBB373B5-EF3F-4DBB-B8AA-7152CEC275BF</UserSecretsId>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.1" />
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.312" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\RentCar.Common\RentCar.Common.csproj" />
+    <ProjectReference Include="..\..\Data\RentCar.Data.Models\RentCar.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\RentCar.Data\RentCar.Data.csproj" />
+    <ProjectReference Include="..\..\Services\RentCar.Services.Data\RentCar.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Services\RentCar.Services.Mapping\RentCar.Services.Mapping.csproj" />
+    <ProjectReference Include="..\..\Services\RentCar.Services.Messaging\RentCar.Services.Messaging.csproj" />
+    <ProjectReference Include="..\..\Services\RentCar.Services\RentCar.Services.csproj" />
+    <ProjectReference Include="..\RentCar.Web.Infrastructure\RentCar.Web.Infrastructure.csproj" />
+    <ProjectReference Include="..\RentCar.Web.ViewModels\RentCar.Web.ViewModels.csproj" />
+  </ItemGroup>
+</Project>

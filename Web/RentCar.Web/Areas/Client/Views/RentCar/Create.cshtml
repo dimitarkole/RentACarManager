@@ -1,0 +1,32 @@
+﻿@model RentCarCreateInputModel
+
+@{
+    ViewData["Title"] = "Book car";
+}
+
+<h1>Book a car</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-warning"></div>
+            <div class="form-group">
+                <input asp-for="CarId" hidden class="form-control" />
+            </div>
+            <hr />
+            <div class="form-group w-25">
+                <label asp-for="DateFrom"></label>
+                <input asp-for="DateFrom" class="form-control" />
+                <span asp-validation-for="DateFrom" class="text-warning"></span>
+            </div>
+            <div class="form-group w-25">
+                <label asp-for="DateTo"></label>
+                <input asp-for="DateTo" class="form-control" />
+                <span asp-validation-for="DateTo" class="text-warning"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-dark" id="add-passenger-btn">Book car</button>
+            </div>
+        </form>
+    </div>
+</div>

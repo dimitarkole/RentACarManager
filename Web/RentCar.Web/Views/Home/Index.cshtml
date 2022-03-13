@@ -1,0 +1,77 @@
+﻿@using RentCar.Common
+@model IEnumerable<CarViewModel>
+@{
+    this.ViewData["Title"] = "Home Page";
+}
+
+<div>
+    @if (!Model.Any())
+    {
+        <hr class="bg-info cm-hr " />
+        <div class="font-size-30 text-center mt-4 text-white">There are no cars in the system!</div>
+        <hr class="bg-info cm-hr" />
+    }
+    else
+    {
+        <table class="table table-striped text-white">
+            <thead>
+                <tr class="row">
+                    <th class="col-md-2">Image</th>
+                    <th class="col-md-2">Brand</th>
+                    <th class="col-md-2">Model</th>
+                    <th class="col-md-2">Price</th>
+                    <th class="col-md-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var car in Model)
+                {
+                <tr class="row">
+                    <td class="col-md-2"><img src="@car.ImageUrl" /></td>
+                    <td class="col-md-2">
+                        <a class="text-white"
+                           asp-controller="Home"
+                           asp-action="Details"
+                           asp-route-id="@car.Id">
+                            @car.Brand
+                        </a>
+                    </td>
+                    <td class="col-md-2">@car.Model</td>
+                    <td class="col-md-2">@car.Price</td>
+                    @if (User.IsInRole(Roles.Administrator))
+                    {
+                        <td class="col-md-3">
+                            <a class="btn btn-outline-primary mx-3"
+                               asp-area="@AdministrationArea"
+                               asp-controller="Car"
+                               asp-action="Edit"
+                               asp-route-id="@car.Id">
+                                Edit
+                            </a>
+                            <a class="btn btn-outline-danger"
+                               asp-area="@AdministrationArea"
+                               asp-controller="Car"
+                               asp-action="Delete"
+                               asp-route-id="@car.Id">
+                                Delete
+                            </a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="col-md-3">
+                            <a class="btn btn-outline-primary mx-3"
+                               asp-area="Client"
+                               asp-controller="RentCar"
+                               asp-action="Create"
+                               asp-route-CarId="@car.Id">
+                                Book car
+                            </a>
+                        </td>
+                    }
+                </tr>
+                }
+            </tbody>
+        </table>
+    }    
+</div>

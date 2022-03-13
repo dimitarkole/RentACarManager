@@ -1,0 +1,30 @@
+﻿@model CarDetailsModel
+@{
+    ViewData["Title"] = "Car";
+}
+
+<div class="row">
+    <div class="col-md-5">
+        <img src="@Model.ImageUrl" />
+    </div>
+
+    <div class="col-md-6">
+        <h2>@Model.Brand - @Model.Model</h2>
+        <small>@Model.Made</small>
+        <div>
+            Count Passagers: @Model.CountPassagers
+         </div>
+              <div>
+            Price: @Model.Price
+         </div>
+         <div>Desctiption:</div>
+
+         <div>
+            @Model.Desctiption
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
