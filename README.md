@@ -1,9 +1,9 @@
 #Rent a car
 
 	Rent a car is a system that aims to do everything in rent a car management. It can control cars,
-users, booked cars and etc. The web aplication gives the possibility to track cars with specific information 
-of the people that are booked. Easy to use and appealing to the eye, it has everything that you need.
-The web site has been developed for 6 hour at State Examination of national program "IT career".
+	users, booked cars and etc. The web aplication gives the possibility to track cars with specific information 
+	of the people that are booked. Easy to use and appealing to the eye, it has everything that you need.
+	The web site has been developed for 6 hour at State Examination of national program "IT career".
 
 ##Project desctiption
 
